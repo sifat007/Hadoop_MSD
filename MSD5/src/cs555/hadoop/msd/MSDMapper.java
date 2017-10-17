@@ -12,10 +12,10 @@ import java.util.regex.*;
 /**
  * Mapper: Reads line by line, split them into words. Emit <word, 1> pairs.
  */
-public class MSDMapper extends Mapper<LongWritable, Text, Text, MapWritable> {
+public class MSDMapper extends Mapper<LongWritable, Text, Text, SortedMapWritable> {
 	private final static IntWritable one = new IntWritable(1);
 	private final static IntWritable two = new IntWritable(2);
-	private MapWritable record = new MapWritable();
+	private SortedMapWritable record = new SortedMapWritable();
 	
 	private static Text textKey = new Text();
 	private static Text songdetail_container = new Text();

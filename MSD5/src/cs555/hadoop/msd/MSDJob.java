@@ -30,7 +30,7 @@ public class MSDJob {
             job.setReducerClass(MSDReducer.class);
             // Outputs from the Mapper.
             job.setMapOutputKeyClass(Text.class);
-            job.setMapOutputValueClass(MapWritable.class);
+            job.setMapOutputValueClass(SortedMapWritable.class);
             // Outputs from Reducer. It is sufficient to set only the following two properties
             // if the Mapper and Reducer has same key and value types. It is set separately for
             // elaboration.
