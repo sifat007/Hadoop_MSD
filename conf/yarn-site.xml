@@ -7,7 +7,7 @@
 
     <property>
         <name>yarn.resourcemanager.resource-tracker.address</name>
-        <value>salem.cs.colostate.edu:41208</value>
+        <value>richmond.cs.colostate.edu:41208</value>
         <description>host is the hostname of the resource manager and
             port is the port on which the NodeManagers contact the Resource Manager.
         </description>
@@ -15,7 +15,7 @@
 
     <property>
         <name>yarn.resourcemanager.scheduler.address</name>
-        <value>salem.cs.colostate.edu:41209</value>
+        <value>richmond.cs.colostate.edu:41209</value>
         <description>host is the hostname of the resourcemanager and port is the port
             on which the Applications in the cluster talk to the Resource Manager.
         </description>
@@ -29,7 +29,7 @@
 
     <property>
         <name>yarn.resourcemanager.address</name>
-        <value>salem.cs.colostate.edu:41210</value>
+        <value>richmond.cs.colostate.edu:41210</value>
         <description>the host is the hostname of the ResourceManager and the port is the port on
             which the clients can talk to the Resource Manager.
         </description>

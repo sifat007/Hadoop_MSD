@@ -14,11 +14,11 @@
     </property>
     <property>
         <name>fs.viewfs.mounttable.default.link./home</name>
-        <value>hdfs://salem.cs.colostate.edu:41201</value>
+        <value>hdfs://richmond.cs.colostate.edu:41201</value>
     </property>
     <property>
         <name>fs.viewfs.mounttable.default.link./tmp</name>
-        <value>hdfs://salem.cs.colostate.edu:41201/tmp</value>
+        <value>hdfs://richmond.cs.colostate.edu:41201/tmp</value>
     </property>
     <property>
         <name>fs.viewfs.mounttable.default.link./data</name>

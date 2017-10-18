@@ -1,6 +1,6 @@
 <configuration>
   <property>
     <name>fs.default.name</name>
-    <value>hdfs://salem.cs.colostate.edu:41201</value>
+    <value>hdfs://richmond.cs.colostate.edu:41201</value>
   </property>
 </configuration>

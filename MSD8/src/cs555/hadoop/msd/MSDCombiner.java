@@ -16,6 +16,8 @@ public class MSDCombiner extends Reducer<Text, SortedMapWritable, Text, SortedMa
 	private final static IntWritable two = new IntWritable(2);
 	private final static DoubleWritable _1 = new DoubleWritable(-1);
 	
+	private final static Text size_storage = new Text();
+	
 	private SortedMapWritable  sortedMap = new SortedMapWritable();
 	private SortedMapWritable  subMap = new SortedMapWritable();
     @Override
@@ -23,12 +25,13 @@ public class MSDCombiner extends Reducer<Text, SortedMapWritable, Text, SortedMa
 
         for(SortedMapWritable map : values){
         	DoubleWritable hotness = (DoubleWritable)map.get(one);
-        	Text songdetail = (Text)map.get(two);  
+        	Text songdetail = (Text)map.get(two);
         	sortedMap.put(hotness,songdetail);
         }
         
         int limit = Math.min(sortedMap.size(),10);
-        sortedMap.put(_1,sortedMap.size());
+        size_storage.set(sortedMap.size()+"");
+        subMap.put(_1,size_storage);
         for(int i = 0 ; i < limit ; i++) {
         	WritableComparable hotness = sortedMap.lastKey();
         	subMap.put(hotness,sortedMap.get(hotness));
