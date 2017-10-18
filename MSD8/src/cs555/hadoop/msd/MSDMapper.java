@@ -12,7 +12,7 @@ import java.util.regex.*;
 /**
  * Mapper: Reads line by line, split them into words. Emit <word, 1> pairs.
  */
-public class MSDMapper extends Mapper<LongWritable, Text, Text, SortedMapWritable> {
+public class MSDMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 	private final static IntWritable one = new IntWritable(1);
 	private final static IntWritable two = new IntWritable(2);
 	private SortedMapWritable record = new SortedMapWritable();
@@ -29,16 +29,6 @@ public class MSDMapper extends Mapper<LongWritable, Text, Text, SortedMapWritabl
         	return;
         }
         
-        double hotness;
-        try {
-        	hotness = Double.parseDouble(row[42]);
-        }catch(Exception ex) {
-        	hotness = 0;
-        }
-        hotness_container.set(hotness);
-        
-        String songdetail = row[11] + "\t" + row[50];
-        songdetail_container.set(songdetail);
         
         String genre_txt = "";
         if(row[13].length() > 4) {
@@ -54,10 +44,8 @@ public class MSDMapper extends Mapper<LongWritable, Text, Text, SortedMapWritabl
         	    	String s = m.group();
         	    	genre = s.substring(2, s.length() -2);
         	    }
-                record.put(one,hotness_container);
-                record.put(two,songdetail_container);
                 textKey.set(genre);
-                context.write(textKey, record);
+                context.write(textKey, one);
         	}        	            
         }
         
